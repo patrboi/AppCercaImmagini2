@@ -1,0 +1,124 @@
+
+    .header{display:flex;width:1350px; position:fixed;/*fisso sullo schermo,
+    perciò non si può allineare con il margin-auto, perciò agisco sul left:50% e poi lo traslo*/
+    top:0;left:50%;transform:translateX(-50%);padding: 30px;display:flex; /*flexbox allinea elementi in un contenitore*/
+    max-width: 1350px;flex-direction:row;
+    }
+
+  /*  .logo{width: 70px;height: 70px;z-index: 1;}*/
+
+
+  /*  .titolo {
+ height: 60px;
+ font: bold 150% Arial,sans-serif;
+ color: #FFFFFF;
+ background-color: #0000FF }
+ */
+
+ .logo{width:70px;height: 70px;z-index:1;flex-direction:row;}
+
+ .navbar {flex-direction:row;
+ width: 100%;
+ z-index: 0;
+ /*
+ left: 10px;
+ top: 80px;
+ background-color: #FFFFFF
+ border:1px solid red;
+position: absolute; */}
+
+ /*.navbar li {
+/*font-size: 110% */
+
+.link-navbar{flex-direction:row;
+/*font-size: 110% */
+color:yellow;display:inline-block; /* ciascun elemento occuopa solo la'ampiezza necessaria**/
+}
+
+.link-navbar a{color:orange;padding:15px;display:block;}
+/*a:link, #navbar a:visited {
+ color: navy;
+ text-decoration: none }
+.navbar a:hover {
+ color: #0000FF }*/
+ /*.navbar li p{color:orange;}*/
+
+/* .menu{width:100%;z-index: 0;}
+ .menu li{color:yellow;display:inline-block;}
+ .menu li a{color:orange;padding:15px;display:block;}
+ .menu li p{color:orange;}
+ .hamburger{display:none;}
+
+ .vetrina{
+   /*linear-gradient: 0deg=inclinazione sfumatura (0=verticale),
+   background:url("medita2.png") no-repeat center center; /*linear-gradient(0deg, rgba(174,203,209,.1), rgba(174,203,209,0.6) 70.71%)
+   background-size: cover;
+   height:100vh;display: flex; width: 100%; align-items: center;     /*vh:vertical height*/
+   }
+
+
+   /*
+   .hero__content h1,
+   .hero__content p{color: #fff;}
+
+
+
+
+
+
+ .contenuto {
+ color:#000000;
+ background-color:#FFFFFF;
+ margin-right: 20%;
+ margin-top: 0px;
+ margin-left: 25%;
+ margin-bottom: 0px }
+*
+ .contenuto{width:100%; max-width: 1350px;margin: 0px auto;padding:30px;}
+ .intro-text{
+ font-size: 80%;
+ text-transform:uppercase;font-size: 20px;font-weight: 900;color:#fff;}/* 900 è un'extrabold
+
+ .articolo{
+  display:flex; /*  allinea gli elementi in un contenitore
+  height: 100vh;
+  width:100%;
+  align-items: center; /*item=elemento
+  }
+ .img{width:65%;height:100%;}
+ .img img{object-fit: cover;width:100%;height:100%;}
+ .contenutoArticolo{width:35%;padding: 50px; color:#000;}
+
+ .grid{display: flex;max-width: 1352px;padding:0px 30px;margin:0px auto;}
+ .grid-col{width: 100%;color:#fff;flex-wrap: wrap;}
+ .panel-blue{
+   background:#4bb1e9;padding: 100px 30px;
+ }
+ .panel-blue_text{display:flex;align-items: center;}
+ .dot{width: 250px;height: 250px;background:#8C8;border-radius:100%;line-height: 180px;text-align: center;margin-right: 10px;display: inline-block;margin-left: 10px;margin-bottom: 10px;}
+.dot img{width: 65%;height: 65%px;padding-bottom: 0px;padding:20px;padding-top:40px;}
+ /*.footer {
+ height: 30px;
+ font: bold 114% Arial,sans-serif;
+ text-align: center;
+ color: #FFFFFF;
+ background-color: #0000FF }
+
+ .footer a:link, #footer a:visited {
+ color: #FFFFFF;
+ text-decoration: none }
+.footer a:hover {
+ color: #FFFF00 }
+
+ .footer{
+   background: #06062b;
+   padding: 80px 0px;
+   width:100%;
+ }
+
+ .mt-1{margin-top:50px;margin-left: 6px;}
+ .mt-2{margin-top: 12px;margin-bottom: 12px;margin-left: 12px;}
+ .mt-3{margin-top: 150px;}
+ .mt-4{margin-bottom: 1px;margin-top: 50px;}
+ .mt-5{margin-top: 1px;}
+ .tw{color: #fff;}

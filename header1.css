@@ -1,0 +1,60 @@
+
+  /*  .header{display:flex;width:100%; position:fixed;/*fisso sullo schermo,perciò non si può allineare con il margin-auto, perciò agisco sul left:50% e poi lo traslo
+    top:0;left:50%;transform:translateX(-50%);padding: 30px; flexbox allinea elementi in un contenitore
+    max-width: 1750px;flex-direction:row;/*height:55px;
+    }
+ .logo{width:30px;height:30px;z-index:1;flex-direction:row;}
+ .img-logo{width:30px;height:30px;}
+ .img-logo img{width:100%;height:100%;}
+ .navbar{display:flex; flex-direction:row;width:100%;z-index: 0;}
+.link-navbar{flex-direction:row-reverse;color:rgb(128, 70, 0);}/* ciascun elemento occuopa solo la'ampiezza necessaria
+.link-navbar a{font-size: 17px;font-weight: bold;color:#f07912;text-emphasis: extrabold;padding:15px;flex-direction:row-reverse;}   /*display:block;*/
+
+
+.header {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  height: 80px;
+  padding: 0 30px;
+  background-color: #f5f5f5;
+}
+
+.logo {
+  justify-self: start;
+}
+.logo{width:30px;height:30px;z-index:1;flex-direction:row;}
+ .img-logo{width:30px;height:30px;}
+ .img-logo img{width:100%;height:100%;}
+
+.navbar {
+  justify-self: end;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.link-navbar {
+  margin-left: 20px;
+}
+.link-navbar a{font-size: 17px;font-weight: bold;color:#f07912;text-emphasis: extrabold;padding:15px;flex-direction:row-reverse;}   /*display:block;*/
+
+
+
+
+
+
+
+/*smartphone*/
+@media (max-width: 768px) {
+    .cta{display:none;}  /* right:-100% lo trasla fuori dallo schermo;per farlo rientrare comparsa-->js jquery (occupa pocomspazio....) */
+    .menu{position: absolute;top:0px;right:-100%;background: #000;height:100vh;padding-top: 80px;} /* proprietà vertical height */
+    .menu--open{right: 0px;}
+    .menu li{display: block; }
+  
+    .menu li a{padding: 15px 30px;font-size: 20px;}
+    .hamburger{display:block; width: 30px;height: 30px;position:absolute;top:40px;right: 30px;}
+    .hamburger span{background: #fff;height: 3px;width: 100%;display: block;margin-bottom: 5px;}
+    }
+    .button{padding: 18px 28px;background: #ffcf31;color:#fff;display: inline-block;border-radius:4px;}
+  
+
