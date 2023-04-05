@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <!----------------------------------
+      viewport controlla il layout sui browser per "mobile"
+-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>Document</title>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+      <link rel="stylesheet" href="style2.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flickity/3.0.0/flickity.min.css" integrity="sha512-fJcFDOQo2+/Ke365m0NMCZt5uGYEWSxth3wg2i0dXu7A1jQfz9T4hdzz6nkzwmJdOdkcS8jmy2lWGaRXl+nFMQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
+      <script >
+      function calcola() {
+                    var N = eval(document.getElementById("N").value);
+                    var S = 0.7819*12*eval(document.getElementById("S").value)/N;
+                  /* somma = eval(document.getElementById("totale").value)*2;  */
+                  /*  document.getElementById("totale").value = S;*/
+                    document.getElementById("tot").innerHTML = S + "kg CO2/anno";
+                    /*document.getElementById("casella").value = "";*/
+                     /*var Q = eval(document.getElementById("Q").value);
+                     alert("vuoi inserire");*/
+             }
+      </script>
+    </head>
+
+    <body>
+<!--  header -->
+      <div class="header"> <!--flexbox allinea gli elementi in un contenitore-->
+        <div class="logo">
+          <img src="logo.png" alt="" width="30px" height="30px">
+        </div>
+        <ul class="menu">
+          <li><a href="Python">Python</a></li>
+          <li><a href="Tkinter">Tkinter</a></li>
+          <li><a href="Arduino">Arduino</a></li>
+          <li> <p id="Mbot" >MBot </p></li>
+        </ul>
+
+        <div class="cta"><a href="" class="button">Contatti</a></div>
+        <div class="hamburger"> <!-- nel flusso html è posizionato dopo il menu e dil logo perciò viene visualizzato sopra -->
+          <span></span>
+            <span></span>
+              <span></span>
+        </div>
+
+      </div>
+
+  <!--  hero -->
+
+    <div class="hero">
+       <div class="hero__content">
+          <p class="intro-text">Tkinter, interfaccia grafica per python</p>
+          <h1 class="big-text">App Cerca-Immagini</h1>
+
+          <a href="" class="button">Discover More</a>
+
+      </div>
+    </div>
+
+<div class="poster mt-3">
+   <div class="poster__img">
+     <img src="farfalla.png" alt="" >
+   </div>
+  <div class="poster__content">
+     <h3 class="big-text">Tkinter app Cerca-Immagini</h3>
+     <h4 class="medd-text">creiamo un'applicazione che carica immagini da internet, utilizzando una casella di testo in cui inserire una <span class="popup-trigger tw2" data-popup="popup1"> <span class="tw2">query </span> </span>e un pulsante per eseguire la ricerca e visualizzare l'immagine.</h4>
+     <p class="medd-text">Per completezza viene riportato l'intero codice con le relative spiegazioni.  <br><br></p> 
+     <a href="#" class="button">call to action</a>
+  </div>
+  <div class="popup" id="popup1">
+    <h3 class="normal-text tw2">In informatica, il termine "query" si riferisce ad una richiesta o interrogazione che viene effettuata ad un database o ad un motore di ricerca al fine di ottenere informazioni specifiche.<br><br>
+
+        Ad esempio, una query può essere una richiesta di ricerca di tutti i prodotti di una determinata categoria in un database di un negozio online, oppure una ricerca di immagini di un particolare argomento in un motore di ricerca come Google o Bing.<br>
+        
+    </h3>
+ </div>
+</div>
+
+<div class="bg-cover mt-3">
+  <div class="bg-cover__title">
+  <h3 class="big-text tw">Ecco il flusso di esecuzione del codice:</h3>
+  </div>
+  <div class="bg-cover__text">
+    <h4 class="medd-text tw">1. Importazione dei moduli necessari: tkinter, PIL, requests e BytesIO.</h4>
+    <p class="tw"> </p>
+     <h4 class="medd-text tw"> 2. Definizione della <span class="popup-trigger tw2" data-popup="popup6"> <span class="tw2">funzione load_image(). </span> </span></h4>
+    <p class="tw"></p>
+    <h4 class="medd-text tw"> 3. Creazione della <span class="popup-trigger tw2" data-popup="popup5"> <span class="tw2">finestra principale </span> </span>dell'applicazione mediante il costruttore Tk() del modulo tkinter.</h4>
+    <p class="tw"></p>
+    <h4 class="medd-text tw"> 4. Creazione di un widget Label per visualizzare l'immagine, inizialmente vuoto.</h4>
+    <p class="tw"></p>
+    <h4 class="medd-text tw"> 5. Avvio del ciclo principale dell'interfaccia grafica mediante il metodo <span class="popup-trigger tw2" data-popup="popup7"> <span class="tw2">mainloop() </span> </span> dell'oggetto root.</h4>
+      <p class="tw"></p>
+  
+  </div>
+
+
+  <div class="popup" id="popup6">
+          <h3 class="normal-text tw2"> a. Quando l'utente preme il pulsante "Load Image", la funzione load_image() viene eseguita.<br><br> b. La funzione load_image() legge il testo inserito nella casella di testo, carica l'immagine corrispondente dalla fonte fornita da requests, crea un oggetto PhotoImage di PIL, aggiorna il widget Label per visualizzare l'immagine caricata.<br><br>            
+          </h3> 
+  </div>
+
+  <div class="popup" id="popup7">
+          <h3 class="normal-text tw2"> L'applicazione continua ad eseguire il ciclo principale fino a quando l'utente chiude la finestra principale. <br><br>
+          </h3>
+  </div> 
+
+  <div class="popup" id="popup5">
+      <h3 class="normal-text tw2"> a.Impostazione del titolo della finestra principale mediante il metodo title() dell'oggetto root.<br><br>b. Creazione di un widget Entry per la casella di testo.<br><br>c. Creazione di un pulsante Button per caricare l'immagine. <br><br> </h3>
+  </div>
+</div>
+  
+<div class="poster mt-3">
+  
+  <div class="poster__content">
+   <h2 class="intro-text">Questo codice importa quattro moduli:<br> tkinter, PIL (Python Imaging Library), requests e io.</h2>
+   <h3 class="normal-text">Il codice utilizza queste librerie per creare una semplice applicazione GUI che consente all'utente di digitare una query di ricerca (in una casella di testo) e di visualizzare un'immagine correlata (scaricata da Internet) quando viene premuto un pulsante.<br><br> 
+      Per fare ciò, viene utilizzata la <span class="popup-trigger" data-popup="popup2">classe </span>ImageTk.PhotoImage di PIL per convertire l'immagine scaricata in un oggetto che può essere visualizzato in un widget Label di tkinter.<br><br>
+     "load_image()" è una funzione che effettua la <span class="popup-trigger" data-popup="popup4">richiesta HTTP</span> , apre l'immagine, la converte in un oggetto PhotoImage e la visualizza nel <span class="popup-trigger" data-popup="popup3">widget Label.</span><br><br>
+      Il modulo "requests" è usato per effettuare richieste HTTP (ad esempio, scaricare dati da Internet;<br><br>il modulo 'io' fornisce una serie di strumenti che servono per leggere o scrivere dati binari).
+      <!--Infine, il codice crea una finestra tkinter e aggiunge un widget Entry, un widget Button e un widget Label alla finestra.<br><br> La finestra viene mostrata all'utente e l'applicazione entra in un loop di eventi (mainloop()) fino a quando l'utente non la chiude.--></h3>
+  </div>
+  <div class="poster__img"><img src="cod1.jpg" alt="">
+  </div>
+  <div class="popup" id="popup2">
+      <h3 class="normal-text tw2"> La classe è come un modello o uno stampo che descrive come creare un nuovo oggetto.<br><br> È come se avessimo un progetto di un'auto, che ci dice come costruire ogni parte dell'auto, come assemblarle insieme e come far funzionare l'auto nel complesso. <br><br> Invece di costruire l'auto ogni volta da zero, possiamo usare il progetto come un modello e creare molte auto simili tra loro. <br><br> Allo stesso modo, possiamo creare molti oggetti di una stessa classe, che condividono le stesse proprietà e metodi, ma con valori diversi.<br><br> </h3>
+  </div>
+  
+  <div class="popup" id="popup3">
+      <h3 class="normal-text tw2"> I widget possono essere bottoni, caselle di testo, menu a tendina, etichette, barre di scorrimento e molti altri.<br><br> I widget sono solitamente utilizzati per creare interfacce utente intuitive e interattive in diverse applicazioni, come ad esempio software di produttività, videogiochi, applicazioni web e applicazioni mobili.<br><br> In sintesi, in informatica, un widget è un componente grafico di un'interfaccia utente che serve ad interagire con l'utente o a visualizzare informazioni.
+      <br><br>In Tkinter, il widget Label è un widget che consente di visualizzare testo o immagini su una finestra grafica. <br><br>È possibile specificare il testo da visualizzare nel widget Label al momento della creazione o in un secondo momento utilizzando il metodo configure(). <br><br>Inoltre, è possibile specificare la posizione e le dimensioni del widget Label all'interno della finestra grafica utilizzando diversi sistemi di layout disponibili in Tkinter. <br><br>Il widget Label è spesso utilizzato per creare etichette informative, titoli e intestazioni per altre interfacce utente.
+  </h3>
+      </div>
+  <div class="popup" id="popup4">
+          <h3 class="normal-text tw2"> Una richiesta HTTP è un messaggio che viene inviato dal client (come un browser web) al server per richiedere una risorsa web specifica, come una pagina web, un'immagine o un file.<br><br>Le richieste HTTP sono alla base del funzionamento del World Wide Web e vengono utilizzate ogni volta che si accede a una risorsa web tramite un browser o un'altra applicazione client.<br><br></h3>
+  </div>
+</div>
+      
+  <div class="poster mt-3">
+    <div class="poster__img"><img src="cod2.png" alt="">
+    </div>
+    <div class="poster__content">
+      <h2 class="intro-text"> Evidenziamo quattro elementi:def load_image():, query = text_entry.get(),  get()</h2>
+      <h3 class="normal-text">questo codice crea una funzione chiamata load_image, che serve per leggere il contenuto della casella di testo, che è stata definita in precedenza e ha un nome text_entry.<br><br> La funzione get() serve per ricavare il valore corrente della casella di testo. <br><br>Il valore letto viene quindi assegnato alla variabile query. <br><br>Questa variabile viene utilizzata in seguito per formare l'URL dell'immagine da scaricare.<br><br>  
+           <!--Infine, il codice crea una finestra tkinter e aggiunge un widget Entry, un widget Button e un widget Label alla finestra.<br><br> La finestra viene mostrata all'utente e l'applicazione entra in un loop di eventi (mainloop()) fino a quando l'utente non la chiude.--></h3>
+    </div>
+    
+  </div>
+   <div class="poster mt-3">  
+      <div class="poster__content">
+        <h2 class="intro-text"> .....</h2>
+        <h3 class="normal-text">In questo codice viene caricata un'immagine da internet utilizzando la libreria requests. <br><br>Viene inviata una richiesta http&gt; all'URL specificato come parametro della funzione get(), specificando nella query string il testo letto dalla casella di testo query. <br><br> La risposta viene poi salvata nella variabile response.<br><br>
+  
+          Per leggere l'immagine dalla risposta, si utilizza il modulo BytesIO che ci permette di leggere e scrivere dati in formato binario in modo simile a come faremmo con un file, ma invece di leggere e scrivere su un file, legge e scrive in memoria del computer.<br><br>
+  
+          In pratica, possiamo immagazzinare dei dati in una variabile in modo che possiamo manipolarli come se fossero un file, senza dover salvare o aprire alcun file. <br><br>Questo è molto utile se vogliamo lavorare con dati binari come immagini, suoni o file compressi e non vogliamo salvarli fisicamente sul disco. <br><br>Questo contenuto viene poi passato alla funzione Image.open() del modulo PIL per creare un oggetto immagine, che può essere poi visualizzato all'interno dell'interfaccia grafica.  <br><br>
+           <!--Infine, il codice crea una finestra tkinter e aggiunge un widget Entry, un widget Button e un widget Label alla finestra.<br><br> La finestra viene mostrata all'utente e l'applicazione entra in un loop di eventi (mainloop()) fino a quando l'utente non la chiude.--></h3>
+      </div>     
+      <div class="poster__img"> <img src="cod3.png" alt="">   
+    </div>
+   </div>
+
+  <div class="poster mt-3">
+    <div class="poster__img"><img src="cod4.png" alt="">
+    </div>
+    <div class="poster__content">
+      <h2 class="intro-text"><br> .........</h2>
+      <h3 class="normal-text">In questo codice, stiamo creando un oggetto PhotoImage a partire da un'immagine img ottenuta precedentemente.<br><br> L'oggetto PhotoImage può essere visualizzato su una finestra tramite un widget Label.<br><br>
+        Successivamente, aggiorniamo l'immagine del widget Label con l'immagine appena creata tramite il metodo configure<br><br>        
+        Infine, stiamo assegnando l'oggetto photo alla variabile "image" di Label per evitare che venga distrutto <br><br>Assegnandolo all'attributo image dell'oggetto Label, garantiamo che venga mantenuto in memoria finché l'oggetto Label stesso è in vita.<br><br>  
+         <!--Infine, il codice crea una finestra tkinter e aggiunge un widget Entry, un widget Button e un widget Label alla finestra.<br><br> La finestra viene mostrata all'utente e l'applicazione entra in un loop di eventi (mainloop()) fino a quando l'utente non la chiude.--></h3>
+    </div>
+  </div>
+<div class="poster mt-3">
+    <div class="poster__content">
+      <h2 class="intro-text"> .....</h2>
+      <h3 class="normal-text">La riga di codice if __name__ == "__main__": controlla se il modulo è stato eseguito direttamente (invece di essere importato come modulo da un altro programma) e se sì, esegue il codice all'interno di questo blocco. <br><br>In questo caso, il codice all'interno del blocco crea una nuova finestra principale (root) utilizzando il modulo tkinter e imposta il titolo della finestra su "Image Viewer".<br><br>
+        <!--Infine, il codice crea una finestra tkinter e aggiunge un widget Entry, un widget Button e un widget Label alla finestra.<br><br> La finestra viene mostrata all'utente e l'applicazione entra in un loop di eventi (mainloop()) fino a quando l'utente non la chiude.--></h3>
+    </div>
+    <div class="poster__img"><img src="cod5.png" alt="">
+    </div>
+</div>    
+
+<div class="articolo mt-3">
+  <div class="poster__img"> <img src="cod6.png" alt="">
+  </div>
+  <div class="poster__content">
+    <h2 class="intro-text">.........</h2>
+    <h3 class="normal-text">Questo codice serve per creare un oggetto Entry all'interno della finestra principale root dell'interfaccia grafica.<br><br> L'oggetto Entry è una casella di testo in cui l'utente può inserire del testo.<br><br> Il metodo pack() viene poi chiamato per far sì che l'oggetto Entry venga posizionato all'interno della finestra principale e che venga visualizzato a schermo.<br><br>
+        <!--Infine, il codice crea una finestra tkinter e aggiunge un widget Entry, un widget Button e un widget Label alla finestra.<br><br> La finestra viene mostrata all'utente e l'applicazione entra in un loop di eventi (mainloop()) fino a quando l'utente non la chiude.--></h3>
+ </div>
+</div>
+
+<div class="poster mt-3">
+  <div class="poster__content">
+    <h2 class="intro-text"> .....</h2>
+    <h3 class="normal-text">Il codice crea un pulsante all'interno della finestra principale dell'applicazione utilizzando la libreria tkinter di Python. Il pulsante viene creato con il testo "Load Image" allinterno e quando viene premuto, il comando "load_image" viene eseguito.<br><br> Questo comando è definito altrove nel codice e si occupa di caricare un'immagine da un URL e visualizzarla all'interno dell'applicazione. <br><br>Il pulsante viene quindi visualizzato nella finestra principale dell'applicazione tramite la funzione "pack()".<br><br>
+       <!--Infine, il codice crea una finestra tkinter e aggiunge un widget Entry, un widget Button e un widget Label alla finestra.<br><br> La finestra viene mostrata all'utente e l'applicazione entra in un loop di eventi (mainloop()) fino a quando l'utente non la chiude.--></h3>
+  </div>
+  <div class="poster__img"> <img src="cod7.png" alt="">
+  </div>
+</div>
+
+<div class="poster mt-3">
+  <div class="poster__img"> <img src="cod8.png" alt="">
+  </div>
+   <div class="poster__content">
+    <h2 class="intro-text"> .........</h2>
+    <h3 class="normal-text">In questo codice stiamo creando un'etichetta (label) all'interno della finestra (root), ma l'immagine visualizzata inizialmente è vuota, quindi stiamo impostando la variabile "photo" a "None" (ovvero nessuna immagine) e passiamo questo valore alla proprietà "image" dell'etichetta. In questo modo l'etichetta verrà creata senza mostrare alcuna immagine. <br><br> Infine, posizioniamo l'etichetta nella finestra con il metodo "pack()".
+         <!--Infine, il codice crea una finestra tkinter e aggiunge un widget Entry, un widget Button e un widget Label alla finestra.<br><br> La finestra viene mostrata all'utente e l'applicazione entra in un loop di eventi (mainloop()) fino a quando l'utente non la chiude.--></h3>
+ </div>
+</div>
+<div class="poster mt-3">
+  
+<div class="poster__content">
+  <h2 class="intro-text"> <br>  ....</h2><!-- -->
+  <h3 class="normal-text"> root.mainloop() è un metodo che viene chiamato per avviare la finestra principale dell'interfaccia grafica (GUI) in Tkinter. <br><br>Esso fa in modo che la finestra rimanga aperta e risponda agli eventi dell'utente, come la pressione dei pulsanti o la digitazione di testo. <br><br>Quando il metodo mainloop() viene chiamato, il programma entra in un ciclo infinito in cui attende che l'utente interagisca con la finestra, eseguendo le azioni richieste in risposta a queste interazioni. <br><br>Il ciclo viene interrotto solo quando l'utente chiude la finestra o il programma viene terminato.<br><br>
+  </h3>  <!--Infine, il codice crea una finestra tkinter e aggiunge un widget Entry, un widget Button e un widget Label alla finestra.<br><br> La finestra viene mostrata all'utente e l'applicazione entra in un loop di eventi (mainloop()) fino a quando l'utente non la chiude.--><p></p>
+  </div>
+   <div class="poster__img"> <img src="cod9.png" alt="">
+ 
+  </div>
+</div>
+
+<div class="panel-blue"> 
+  <div class="grid-col panel-blue_text">
+    <div class="grid">
+      <div class="grid-col">
+        <h2 class="med-text tw mt-5">In conclusione</h2>
+        <h3 class="normal-text tw mt-5 tw5">    Ecco un elenco delle istruzioni usate in questo codice:</h3><br><br> <!--class="normal-text tw mt-5">-->
+
+            - import tkinter as tk: importa il modulo tkinter e lo assegna alla variabile tk.<br><br>
+            - from PIL import Image, ImageTk: importa le classi Image e ImageTk dal modulo PIL.<br><br>
+            - import requests: importa il modulo requests.<br><br>
+            - from io import BytesIO: importa la classe BytesIO dal modulo io.<br><br>
+            - def load_image():: definisce la funzione load_image.<br><br>
+            - query = text_entry.get(): legge il testo dalla casella di testo.<br><br>
+            - response = requests.get(f"https://source.unsplash.com/800x600/?{query}"): carica l'immagine da internet tramite una richiesta HTTP all'URL specificato.<br><br>
+            - img = Image.open(BytesIO(response.content)): apre l'immagine dal contenuto della risposta HTTP.<br><br>
+            - photo = ImageTk.PhotoImage(img): crea un'istanza di PhotoImage a partire dall'immagine aperta.<br><br>
+            - label.configure(image=photo): imposta l'immagine visualizzata dal widget label.<br><br>
+            - label.image = photo: memorizza l'istanza di PhotoImage in un attributo dell'istanza di Label per evitare che venga eliminata dalla garbage collection. <br><br> 
+      </div>
+    </div>
+</div><!---->
+
+<div class="grid-col panel-blue_text">
+  <div class="grid">
+     <div class="grid-col">
+          <h2 class="med-text tw mt-5"></h2>
+          <h3 class="normal-text tw mt-5">
+
+              - if __name__ == "__main__":: verifica se il codice sta venendo eseguito come script principale.<br><br>
+              - root = tk.Tk(): crea una nuova finestra principale di Tkinter.<br><br>
+              - root.title("Image Viewer"): imposta il titolo della finestra principale.<br><br>
+              - text_entry = tk.Entry(root): crea un widget di testo per l'input dell'utente.<br><br>
+              - text_entry.pack(): posiziona il widget di testo nella finestra principale.<br><br>
+              - button = tk.Button(root, text="Load Image", command=load_image): crea un pulsante per avviare il caricamento dell'immagine.<br><br>
+              - button.pack(): posiziona il pulsante nella finestra principale.<br><br>
+              - photo = None: inizializza la variabile photo con il valore None.<br><br>
+              - label = tk.Label(root, image=photo): crea un widget di etichetta per visualizzare l'immagine.<br><br>
+              - label.pack(): posiziona il widget di etichetta nella finestra principale.<br><br>
+              - root.mainloop(): avvia la main loop di Tkinter per far partire l'applicazione. <br><br></h3>
+      </div>
+    </div>
+</div>
+     
+</div><div class="footer">
+  <p>scrivi a <a href="mailto:webmaster@sitoscuola.it"> Webmaster</a></p>
+</div>
+
+
+<!--flickity-->
+<div class="main-carousel" data-flickity='{ "cellAlign": "left", "contain": true }'>
+  <div class="carousel-cell">Text</div>
+  <div class="carousel-cell">Text</div>
+  <div class="carousel-cell">Text</div>
+  <div class="carousel-cell">Text</div>
+  <div class="carousel-cell">Text</div>
+  <div class="carousel-cell">Text</div>
+</div>
+
+<div class="panel-blue">
+  <div class="grid panel-blue"> <!---->
+
+    <div class="grid-col panel-blue_dots">
+      <div class="dot">text</div> <!--<img src="automobile.png"></div>-->
+      <div class="dot">text</div>
+      <div class="dot">text</div>
+      <div class="dot">text</div>
+    </div>
+
+    <div class="grid-col panel-blue_text">
+      <div class="grid">
+         <div class="grid-col">
+           <h3 class="med-text tw mt-4">Calcolo della CO2</h3>
+           <p class="normal-text tw "> emessa da ciascun individuo, derivante dal consumo di beni non alimentari.
+         <div class="grid-col">
+
+         </div>
+        <form >
+                  <label class="normal-text tw mt-2" for="S">Digitare il valore della spesa mensile (Euro/mese):</label>
+                  <input   id= "S"  class=" mt-2"type="text" name="S" size="25"> <!--class="mt-2"-->
+</br>
+                  <label class="normal-text tw mt-2" for="N">Digitare il numero di componenti della famiglia:</label>
+                  <input   id= "N" class="mt-2" type="text" name="N" size="25">
+                </br>
+                  <input  id="button1" class="mt-2" type="button" name="invia" value="Invia" onclick="calcola()">
+
+                  <input   class="mt-2" type="button" name="Cancella" value="cancella">
+                </br>
+                <h3 class="normal-text tw mt-4"> CO2 emessa da ciascun componente:</h3>
+                <p id="tot" class="tw mt-5">  <p>
+<!--
+                  <label   class="normal-text tw mt-2"for="Rid">Riduzione emissione:</label>
+                  <input   id="totale" class="mt-2" type="text" name="Rid" size="25"  value="0">
+
+                  <input   id= "Q"  type="text" name="Q" size="25"> -->
+
+
+
+        <!--    <input type="text" id="casella">
+            <input id="button1" type="button" value="Aggiungi" onclick="calcola()">
+            input type="text" id="totale" value="0">
+-->
+                </form>
+      </div>
+
+
+    </div>
+
+  </div>
+
+</div>
+
+<!--footer-->
+
+<div class="footer">
+  <div class="grid">
+    <div class="grid-col">
+      <h4>lorem ipsum</h4>
+      <p>lorem</p>
+   </div>
+   <div class="grid-col">
+      <h4 class="normal-text tw">lorem ipsum</h4>
+      <p>lorem</p>
+   </div>
+   <div class="grid-col">
+      <h4 class="normal-text tw">lorem ipsum</h4>
+      <p>lorem</p>
+   </div>
+   <div class="grid-col">
+      <h4 class="normal-text tw">lorem ipsum</h4>
+      <p>lorem</p>
+   </div>
+ </div>
+</div>
+<!-- Jquery è una libreria JavaScript. jQuery semplifica notevolmente la programmazione JavaScript-->
+<!--https://www.w3schools.com/jquery/default.asp  -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<!--Flickity-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/3.0.0/flickity.pkgd.min.js" integrity="sha512-achKCfKcYJg0u0J7UDJZbtrffUwtTLQMFSn28bDJ1Xl9DWkl/6VDT3LMfVTo09V51hmnjrrOTbtg4rEgg0QArA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+$( document ).ready(function() {/*esegue il codice tra{} quando la pagina è caricata*/
+/* quando clicco sull'icona menù viene aggiunta la classe css del menu */
+//* al secondo click la classe viene disattivata? */
+/* Open Panel */
+$( ".hamburger" ).on('click', function() {
+  $(".menu").toggleClass("menu--open");
+});
+});
+</script>
+<script>
+const d = new Date();
+document.getElementById("data1").innerHTML = d;
+</script>
+<script>
+
+        /*const popup = document.getElementById("popup");
+        const trigger = document.querySelector(".popup-trigger");
+    
+        trigger.addEventListener("mouseover", () => {
+            popup.classList.remove("hidden");
+        });
+    
+        trigger.addEventListener("mouseout", () => {
+            popup.classList.add("hidden");
+        });*/
+    
+    // selezionare tutti gli elementi con la classe "popup-trigger"
+    const triggers = document.querySelectorAll('.popup-trigger');
+    
+    // per ogni trigger, aggiungere gli eventi "mouseenter" e "mouseleave"
+    triggers.forEach(trigger => {
+      // selezionare l'id del popup corrispondente
+      const popupId = trigger.dataset.popup;
+      const popup = document.getElementById(popupId);
+    
+      trigger.addEventListener('mouseenter', () => {
+        // mostrare il popup quando passi il mouse sopra la parola
+        popup.style.display = 'block';
+      });
+    
+      trigger.addEventListener('mouseleave', () => {
+        // nascondere il popup quando allontani il mouse dalla parola
+        popup.style.display = 'none';
+      });
+    });
+    
+   
+</script>
+
+
+
+
+
+    </body>
+    </html>
