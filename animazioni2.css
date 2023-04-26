@@ -1,0 +1,203 @@
+/* base styler */
+body{font-family:'Inter', sans-serif;font-size: 20px;font-weight: bolder;}
+
+a{text-decoration: none;} /* senza sottolineatura*/
+h1,h2,h3,h4,h5,p{color:#000; padding-Bottom: 30px;}
+p{line-height:28px ;color: #666;font-weight:300px;font-size: 18px}
+.big-text{font-size: 70px;font-weight: bold;}
+.med-text{font-size: 40px;}
+.normal-text{font-size: 22px;}
+.small-text{font-size: 14px;}
+.intro-text{text-transform: uppercase;font-size: 20px;font-weight: 900;}/* 900 è un'extrabold */
+
+@media (max-width: 768px) {
+  .big-text{font-size: 40px;font-weight: bold;
+  height:auto;}
+}
+
+/* header */
+.header{width:100%;
+position: fixed;/*fisso sullo schermo,perciò non si può allineare con il margin-auto, perciò agisco sul left:50% e poi lo traslo*/
+z-index:1;
+top:0px;left:50%;transform:translateX(-50%);padding: 30px;display:flex; /*flexbox allinea elementi in un contenitore*/
+max-width: 1350px;
+}
+.logo{width: 70px;height: 70px;z-index:10;}
+
+.menu{
+  transition: all 1s cubic-bezier(.215, .61, .355, 1); /* prima animazione del menu*/
+  width:100%;z-index:10;}
+.menu li{  display:inline-block;}
+.menu li a{color:rgb(223, 30, 30);padding:15px;display:block;}
+.hamburger{display:none;}
+
+  /*smartphone*/
+  @media (max-width: 768px) {
+  .cta{display:none;}  /* right:-100% lo trasla fuori dallo schermo;per farlo rientrare comparsa-->js jquery (occupa pocomspazio....) */
+  .menu{position: absolute;top:0px;right:-100%;background: #000;height:100vh;padding-top: 120px;} /* proprietà vertical height */
+  .menu--open{right: 0px;}
+  .menu li{display: block; }
+  .menu li a{padding: 15px 30px;font-size: 20px;}
+  .hamburger{display:block; width: 30px;height: 30px;position:absolute;top:40px;right: 30px;}
+  .hamburger span{background: #fff;height: 3px;width: 100%;display: block;margin-bottom: 5px;}
+  }
+  .button{padding: 18px 28px;background: #316bff;color:#fff;display: inline-block;border-radius:4px;}
+
+/* ! hero */
+  .hero{
+      position:relative;
+    /*linear-gradient: 0deg=inclinazione sfumatura (0=verticale),  */
+    background:linear-gradient(0deg, rgba(0,0,0,.2), rgba(0,0,0,0.2) 70.71%), url("hero.jpg") no-repeat center center;
+    background-size: cover;overflow:hidden;
+    /*background-size:cover;overflow:hidden;url("hero.jpg") no-repeat center center;  */
+    height:100vh;display: flex; width: 100%; align-items: center;/*vh:vertical height*/
+   /* z-index:0;*/
+    }
+
+    /*after è un selettore che permette di mettere un elemento html da css*/
+
+    .hero:after{
+content:'';
+width:100%;
+height:100%;
+display:block;
+position: absolute;
+bottom:0 px; /*allineato al bottom per enderlo visibile anche su mobile*/
+left: 0 px;
+/*background:#e9f55f;
+opacity: 0.4;*/
+
+    }
+    .hero__content{width:100%;max-width: 1350px;margin: 0px auto;padding:30px;position:relative;/*z-index: 0;*/}
+    .hero__content h1,
+    .hero__content p{color: #fff;}
+
+/*video-sfondo*/
+    #pexels_ekrulila{
+     position:absolute;
+   /* z-index:0;*/
+    top:0 px;
+    left: 0 px;
+    border:1px solid red;
+    min-width:100%;
+    min-height:100%;
+    }
+   
+/*poster*/
+
+
+
+    .poster{
+     display:flex;  /*  allinea gli elementi in un contenitore   */
+    height: 100vh;
+     width:100%;
+     
+     align-items: center; /*item=elemento*/
+     }
+.poster__img{width:65%;height:100%;}
+.poster__img img{object-fit: cover;width:100%;height:100%;}
+.poster__content{width:35%;padding: 50px;}
+
+/* media query è una tecnica css3 https://www.w3schools.com/css/tryit.asp?filename=tryresponsive_mobilefirst   */
+
+@media(max-width: 768px) {
+  .poster{flex-wrap:wrap; height:auto;}
+  .poster__img,
+  .poster__content{width:100%;height: auto} /*wrap: le colonne lunghe vanno a capo, l'h si adatta agli elementi che contiene */
+}
+
+.popup {
+  display: none;
+  position: absolute;
+   /*top: 50%; */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color:white;
+  border: 1px solid black;
+  padding: 10px;
+  z-index: 10;
+}
+
+.popup-trigger {
+  color:darkgreen;
+  font-weight: bolder;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* ! bg-cover */
+
+.bg-cover{
+  display:flex;
+  padding: 100px 0px;
+  background:linear-gradient(0deg, rgba(0,0,0,.2), rgba(0,0,0,0.2) 70.71%), url("hero.jpg") no-repeat center center;
+  background-size: cover;
+  height:100vh;display: flex; width: 100%; align-items: center;
+
+}
+.bg-cover__title{width: 50%;padding: 50px; display: flex; align-items: center;}
+.bg-cover__text{width: 50%; padding:30px;}
+
+@media(max-width: 768px) {
+.bg-cover{flex-wrap: wrap; height:auto;}
+.bg-cover__title,
+.bg-cover__text{width: 100%; }
+
+}
+
+/* ! Grid https://www.w3schools.com/css/css_grid_item.asp */
+
+
+.grid{display: flex;max-width: 1352px;padding:0px 30px;margin:0px auto;}
+.grid-col{width: 100%;}
+
+@media (max-width: 768px) { /*Media query è una tecnica CSS introdotta in CSS3. Utilizza la regola @media per includere un blocco di proprietà CSS solo se una determinata condizione è vera
+  .grid{flex-wrap: wrap;} /*flex wrap: vai a capo*/
+}
+
+/* ! CArousel */
+
+.main-carousel{padding: 40px 0px;}
+
+.carousel-cell{width: 350px;height:350px;
+  margin-right: 40px;}
+
+.carousel-cell_content{
+  width: 100%;height:100%;
+  background:#8C8;
+  border-radius: 100%;
+  line-height: 350px;
+  text-align: center;
+}
+.panel-blue{
+  background:#4bb1e9;padding: 100px 30px;
+}
+.panel-blue_text{display:flex;align-items: center;}
+.dot{width: 250px;height: 250px;background:#8C8;
+  border-radius: 100%;line-height: 250px;text-align: center;
+  margin-right: 40px;display: inline-block;margin-right: 40px;margin-bottom: 40px;}
+/* ! Panel-blue */
+
+/* ! footer */
+
+.footer{
+  background: #06062b;
+  padding: 150px 0px;
+}
+
+/* ! Helper */
+
+.mt-1{margin-top:50px;}
+.mt-2{margin-top: 100px;}
+.mt-3{margin-top: 150px;}
+.tw{color: #fff;}
+
+/*flikity è gratis per i progetti no-profit */
+
+*,
+*:before,
+*:after {/*  serve per evitare che il padding di qualsiasi elemento dell'html si sommi alla width */
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
